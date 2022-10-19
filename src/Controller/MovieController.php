@@ -11,7 +11,7 @@ class MovieController extends AbstractController
     #[Route('/movie', name: 'app_movie')]
     public function index(): Response
     {
-        return $this->render('movie/index.html.twig', [
+        return $this->render('index.html.twig', [
             'controller_name' => 'MovieController',
         ]);
     }
