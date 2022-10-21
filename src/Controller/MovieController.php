@@ -31,17 +31,17 @@ class MovieController extends AbstractController
 
         $repository = $this->em->getRepository(Movie::class);
 
-        //$movies = $repository->findAll();
+        $movies = $repository->findAll();
         //$movies = $repository->find(1);
         //$movies = $repository->findBy([], ['id' => 'DESC']);
         //$movies = $repository->findOneBy(['id' => 2, 'title' => 'The Dark Knight'], ['id' => 'DESC']);
         //$movies = $repository->count([]);
         //$movies = $repository->count(['id' => 1]);
-        $movies = $repository->getClassName();
+        //$movies = $repository->getClassName();
 
-        dd($movies);
+        //dd($movies);
 
-        return $this->render('index.html.twig');
+        return $this->render('index.html.twig', ['movies' => $movies]);
     }
 
 //    //Other Type Of Using The Repository
