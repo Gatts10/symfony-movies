@@ -1,0 +1,29 @@
+{% extends "./base.html.twig" %}
+
+{% block body %}
+    <div class="w-4/5 m-auto pt-40">
+        <h1 class="text-6xl text-center pb-12">
+            Create Movie
+        </h1>
+
+        {{ form_start(form) }}
+
+        {# form_widget get all the inputs #}
+        {# {{ form_widget(form) }} #}
+
+        {# A razão de ter aqui as classes e não no FormType, é porque os css asset não são lidos #}
+        {# Deixei ficar as class também no FormType, para mostrar como serie lá sem usar aqui #}
+        {{ form_row(form.title, {'attr': {'class': 'bg-transparent block border-b-2 w-full h-20 text-6xl outline-none'}}) }}
+        {{ form_row(form.releaseYear, {'attr': {'class': 'bg-transparent mt-10 block border-b-2 w-full h-20 text-6xl outline-none'}}) }}
+        {{ form_row(form.description, {'attr': {'class': 'bg-transparent mt-10 block border-b-2 w-full h-60 text-6xl outline-none'}}) }}
+        {{ form_row(form.imagePath, {'attr': {'class': 'py-10'}}) }}
+
+        <button
+                type="submit"
+                class="uppercase mt-5 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+            Submit Post
+        </button>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
